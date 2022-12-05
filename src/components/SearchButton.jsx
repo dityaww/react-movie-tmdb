@@ -1,6 +1,5 @@
 import React from "react";
 import { searchMovie } from "../api";
-import App from "../App";
 
 function SearchButton() {
   const search = async (q) => {

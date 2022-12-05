@@ -11,6 +11,12 @@ function App() {
 
   const [popularMovies, setPopularMovies] = useState();
 
+  const search = async (q) => {
+    const searchMov = await searchMovie(q);
+    setPopularMovies(searchMov.results);
+    console.log(searchMov.results);
+  };
+
   useEffect(() => {
     getMovie().then((res) => {
       setPopularMovies(res);
@@ -34,12 +40,6 @@ function App() {
         <p>Fitur search masih dalam proses development!</p>
       </div>
     );
-  };
-
-  const search = async (q) => {
-    const searchMov = await searchMovie(q);
-    setPopularMovies(q.results);
-    console.log(searchMov);
   };
 
   return (
